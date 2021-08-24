@@ -1,6 +1,15 @@
 {
   "name": "vue-3-ganttastic",
   "version": "0.0.0",
+  "files": ["dist"],
+  "main": "./dist/vue-3-ganttastic.umd.js",
+  "module": "./dist/vue-3-ganttastic.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-3-ganttastic.es.js",
+      "require": "./dist/vue-3-ganttastic.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
