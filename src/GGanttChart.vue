@@ -21,7 +21,7 @@
       :highlighted-hours="highlightedHours"
     />
     
-    <div id="g-gantt-rows-container">
+    <div id="g-gantt-rows-container" ref="rows-container">
       <slot/>   <!-- the g-gantt-row components go here -->
     </div>
     
@@ -89,9 +89,9 @@ export default {
 
     getGanttBarChildrenList(){
       let ganttBarChildren = []
-      let ganttRowChildrenList = this.$children.filter(childComp => childComp.$options.name === GGanttRow.name)
+      let ganttRowChildrenList = this.$slots.default().filter(childComp => childComp.$options.name === GGanttRow.name)
       ganttRowChildrenList.forEach(row => {
-        let ganttBarChildrenOfRow = row.$children.filter(childComp => childComp.$options.name === GGanttBar.name)
+        let ganttBarChildrenOfRow = row.$slots.default().filter(childComp => childComp.$options.name === GGanttBar.name)
         ganttBarChildren.push(...ganttBarChildrenOfRow)
       })
       return ganttBarChildren
@@ -243,7 +243,10 @@ export default {
     getNextGanttBar(bar, side="left"){
       let allBarsLeftOrRight = []
       if(side === "left"){
-        allBarsLeftOrRight = bar.$parent.$children.filter(gBar => {
+          console.dir(bar.$parent.$refs.barContainer);
+          debugger;
+        allBarsLeftOrRight = bar.$parent.$refs.barContainer.children.filter(gBar => {
+            gBar = gBar.__vueParentComponent.ctx;
           return gBar.$options.name === GGanttBar.name 
                   && gBar.$parent === bar.$parent 
                   && gBar.$refs['g-gantt-bar']
@@ -251,7 +254,8 @@ export default {
                   && gBar.barConfig.pushOnOverlap !== false
         })
       } else {
-        allBarsLeftOrRight = bar.$parent.$children.filter(gBar => {
+        allBarsLeftOrRight = bar.$parent.$refs.barContainer.children.filter(gBar => {
+            gBar = gBar.__vueParentComponent.ctx;
           return gBar.$options.name === GGanttBar.name 
                   && gBar.$parent === bar.$parent 
                   && gBar.$refs['g-gantt-bar']

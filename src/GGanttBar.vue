@@ -4,12 +4,7 @@
       class="g-gantt-bar" 
       ref="g-gantt-bar"
       :style="barStyle"
-      @mouseenter.stop="onMouseenter($event)"
-      @mouseleave.stop ="onMouseleave($event)"
-      @mousedown.stop="onMousedown($event)"
       @click.stop="onClick($event)"
-      @dblclick="onDblclick($event)"
-      @contextmenu="onContextmenu($event)"
     >
       <div class="g-gantt-bar-label">
         <slot 

@@ -14,9 +14,8 @@
         :theme="selectedTheme"
         @dragend-bar="onDragend($event)"
       >
-        <template v-for="row in rowList">
+        <template v-for="row in rowList" :key="row.label">
           <g-gantt-row 
-            :key="row.label"
             :label="row.label"
             :bars="row.barList"
             :highlight-on-hover="highlightOnHover"
@@ -44,7 +43,7 @@ export default {
   data(){
     return {
       chartStart: "2020-03-02 00:00",
-      chartEnd: "2020-03-04 00:00",
+      chartEnd: "2020-03-09 00:00",
       pushOnOverlap: true,
       grid: true,
       rowHeight: 40,
@@ -52,7 +51,7 @@ export default {
       hideTimeaxis: false,
       highlightOnHover: false,
       hours: [...Array(24).keys()],
-      highlightedHours: [10,12],
+      highlightedHours: [0],
       showContextmenu: false,
       contextmenuTimeout: null,
       contextmenuX: 0,

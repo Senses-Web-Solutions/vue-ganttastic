@@ -1,37 +1,18 @@
 {
-  "name": "vue-ganttastic",
-  "version": "0.9.32",
-  "description": "A simple and customizable Gantt chart component for Vue.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/InfectoOne/vue-ganttastic"
-  },
-  "main": "./dist/index.js",
+  "name": "vue-3-ganttastic",
+  "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "bili --name index --plugin vue --vue.css false"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
-  "files": [
-    "dist/*"
-  ],
-  "keywords": [
-    "gantt",
-    "chart",
-    "bar",
-    "diagram",
-    "vue",
-    "vuejs",
-    "ganttastic"
-  ],
-  "author": "Marko Zunic",
-  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.29.1",
+    "vue": "^3.0.5"
+  },
   "devDependencies": {
-    "bili": "^4.10.0",
-    "rollup-plugin-vue": "^5.1.9",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "peerDependencies": {
-    "moment": "^2.26.0"
-  },
-  "dependencies": {}
+    "@vitejs/plugin-vue": "^1.3.0",
+    "@vue/compiler-sfc": "^3.0.5",
+    "vite": "^2.4.4"
+  }
 }

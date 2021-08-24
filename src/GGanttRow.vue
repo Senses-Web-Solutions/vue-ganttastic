@@ -3,7 +3,7 @@
     class="g-gantt-row"
     ref="g-gantt-row"
     :style="{height: `${$parent.rowHeight}px`}"
-    v-on="$listeners"
+    v-bind="$attrs"
   >
     <div 
       class="g-gantt-row-label"
