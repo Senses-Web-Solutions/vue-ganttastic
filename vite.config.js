@@ -13,10 +13,11 @@ export default defineConfig({
     },
     plugins: [vue()],
     rollupOptions: {
-        external: ["vue"],
+        external: ["vue", "moment"],
         output: {
             globals: {
                 vue: "Vue",
+                moment: "moment"
             },
         },
     },
