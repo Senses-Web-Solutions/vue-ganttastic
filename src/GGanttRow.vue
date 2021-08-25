@@ -47,6 +47,7 @@
 <script>
 import GGanttBar from './GGanttBar.vue'
 import moment from 'moment'
+import 'moment/locale/en-gb'
 
 export default {
 

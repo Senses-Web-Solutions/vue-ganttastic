@@ -30,6 +30,7 @@
 
 <script>
 import moment from 'moment'
+import 'moment/locale/en-gb'
 import GanttasticThemeColors from './GanttasticThemeColors.js'
 import GGanttTimeaxis from './GGanttTimeaxis.vue'
 import GGanttGrid from './GGanttGrid.vue'
